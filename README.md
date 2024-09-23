@@ -1,4 +1,4 @@
 # Merkelex
 A cryptocurrency trading simulation.
-#Credits
+# credits
 Maram Esmaeil
