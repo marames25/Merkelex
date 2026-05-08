@@ -1,100 +1,73 @@
-#Merkelex: A Cryptocurrency Trading Simulation
+# Merkelex: Cryptocurrency Trading Simulation
+---
 
-Overview
+## Overview
 
-Merkelex is a C++-based cryptocurrency trading simulation designed to provide a foundational understanding of order book mechanics, wallet management, and basic trading operations within a simulated market environment. This project serves as an educational tool to explore how cryptocurrency exchanges process orders and manage user funds.
+**Merkelex** is a C++-based cryptocurrency trading simulation that models the core mechanics of a real-world exchange.  
+It focuses on order book processing, trade matching, wallet management, and market data simulation.
 
-#Features
+This project is designed for educational purposes to help understand how trading systems operate internally.
 
-•
-Order Book Management: Implements a robust order book to handle buy and sell orders, matching them to execute trades.
+---
 
-•
-Wallet System: Manages user balances for different cryptocurrencies and fiat currencies, supporting deposits, withdrawals, and trade settlements.
+## Core Concepts
 
-•
-CSV Data Integration: Reads market data from CSV files to simulate historical trading activity.
+- Order book mechanics (buy/sell matching)
+- Trade execution engine
+- Wallet balance tracking
+- Market data simulation using CSV files
+- CLI-based user interaction system
 
-•
-User Interaction: Provides a command-line interface for users to interact with the simulation, place orders, and view their wallet status.
+---
 
-#Project Structure
+## Features
 
-The project is organized into several key C++ files, each responsible for a specific aspect of the simulation:
+### 📊 Order Book Engine
+Simulates a real exchange order book, matching buy and sell orders based on price-time priority.
 
-•
-main.cpp: The entry point of the application, initializing and running the simulation.
+### 💰 Wallet System
+Manages multiple currencies and handles:
+- Deposits
+- Withdrawals
+- Trade settlements
 
-•
-MerkelMain.h/MerkelMain.cpp: Contains the core logic for the trading simulation, including the main menu, market statistics, and user interaction handling.
+### 📁 CSV Market Data Loader
+Loads historical market data from CSV files to simulate realistic trading conditions.
 
-•
-OrderBook.h/OrderBook.cpp: Manages the order book, including adding, matching, and processing orders.
+### 🖥️ Interactive CLI
+User-friendly command-line interface to:
+- Place orders
+- View market stats
+- Track wallet balance
+- Advance simulation time
 
-•
-OrderBookEntry.h/OrderBookEntry.cpp: Defines the structure for individual order entries within the order book.
+---
 
-•
-Wallet.h/Wallet.cpp: Implements the user wallet functionality, handling currency balances and transactions.
-
-•
-CSVReader.h/CSVReader.cpp: Utility for reading and parsing market data from CSV files.
-
-#Getting Started
-
-Prerequisites
-
-To build and run Merkelex, you will need:
-
-•
-A C++ compiler (e.g., g++)
-
-•
-Make (for building from Makefile, if provided)
-
-Building the Project
-
-(Assuming a Makefile is present or standard C++ compilation commands are used)
-
-Bash
+## System Architecture
+User (CLI)
+│
+▼
+MerkelMain (Controller)
+│
+├── OrderBook (Matching Engine)
+│ ├── OrderBookEntry (Orders)
+│
+├── Wallet (Funds Manager)
+│
+└── CSVReader (Market Data Loader)
 
 
-g++ -o merkelex *.cpp -std=c++17
+---
+
+## Project Structure
+
+- `main.cpp` → Application entry point  
+- `MerkelMain.h / MerkelMain.cpp` → Core simulation logic  
+- `OrderBook.h / OrderBook.cpp` → Order matching engine  
+- `OrderBookEntry.h / OrderBookEntry.cpp` → Order data structure  
+- `Wallet.h / Wallet.cpp` → Balance & transaction system  
+- `CSVReader.h / CSVReader.cpp` → Market data parser  
+
+---
 
 
-
-Running the Simulation
-
-Bash
-
-
-./merkelex
-
-
-
-#Usage
-
-Upon running the simulation, you will be presented with a menu of options, allowing you to:
-
-•
-View market statistics
-
-•
-Place buy or sell orders
-
-•
-View your wallet balance
-
-•
-Advance to the next time frame
-
-•
-Exit the application
-
-Follow the on-screen prompts to interact with the simulation.
-
-#Credits
-
-Developed by Maram Esmaeil.
-
-#
